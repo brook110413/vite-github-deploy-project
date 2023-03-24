@@ -1,4 +1,5 @@
 import { RouterProvider } from 'react-router-dom';
+import process from 'process';
 
 import router from './routers';
 

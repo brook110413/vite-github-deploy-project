@@ -6,23 +6,14 @@ const ROUTES = [
   {
     path: '/',
     element: <Home />,
-    // errorElement: <NotFoundPage />,
   },
-  // {
-  //   path: '/heroes',
-  //   element: <HeroListPage />,
-  //   loader: heroesListLoader,
-  //   errorElement: <NotFoundPage />,
-  //   children: [
-  //     {
-  //       path: ':heroId',
-  //       element: <HeroProfilePage />,
-  //       loader: heroProfileLoader,
-  //     },
-  //   ],
-  // },
 ];
 
-const router = createBrowserRouter(ROUTES);
+const router = createBrowserRouter(ROUTES, {
+  basename:
+    process.env.NODE_ENV === 'production'
+      ? '/vite-github-deploy-project/'
+      : '/',
+});
 
 export default router;
